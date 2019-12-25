@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> login</title>
+    <script type="text/javascript">
+        function change() {
+            const vc = document.getElementById("vcimg");
+            vc.src = "VerifyCodeServlet?" + new Date().getTime();
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="LoginServlet">
+    用户名： <input type="text" name="userName">
+    <br>
+    密码：<input type="text" name="userPassword">
+    <br>
+    验证码：<input type="text" name="vcname">
+    <img src="VerifyCodeServlet" id="vcimg">
+    <a href="javascript:change()">换一张</a>
+    <br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
